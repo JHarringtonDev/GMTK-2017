@@ -9,6 +9,7 @@ public class MovementController : MonoBehaviour
     float yInput;
     [SerializeField] float moveSpeed;
     [SerializeField] float mouseSpeed;
+    [SerializeField] float dashSpeed;
 
     Rigidbody rb;
 
@@ -30,6 +31,11 @@ public class MovementController : MonoBehaviour
     {
         //Vector3 mouseInput = new Vector3(0, Input.GetAxis("Mouse X"), 0);
         //transform.eulerAngles += mouseInput * mouseSpeed;
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            rb.AddForce(cameraHold.transform.forward * dashSpeed, ForceMode.Impulse);
+        }
     }
 
     void LateUpdate()
@@ -39,6 +45,7 @@ public class MovementController : MonoBehaviour
 
         Vector3 playerInput = cameraHold.transform.forward * yInput + cameraHold.transform.right * xInput;
         playerInput.y = 0;
-        rb.AddForce (playerInput * moveSpeed, ForceMode.Impulse);
+
+        rb.AddForce (playerInput * moveSpeed, ForceMode.Force);
     }
 }
