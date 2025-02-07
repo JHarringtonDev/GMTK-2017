@@ -462,9 +462,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ba315e0469f9f4088fa1748a6a2cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  groundspeed: 10
+  airSpeed: 5
   mouseSpeed: 1
-  dashSpeed: 1
+  dashSpeed: 100
+  dragDelay: 0.5
+  groundDrag: 5
+  playerHeight: 2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!54 &899232637
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -491,7 +498,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!4 &899232638
 Transform:
   m_ObjectHideFlags: 0
@@ -636,7 +643,7 @@ GameObject:
   - component: {fileID: 990395498}
   - component: {fileID: 990395497}
   - component: {fileID: 990395496}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
