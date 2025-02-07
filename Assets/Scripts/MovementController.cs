@@ -45,7 +45,7 @@ public class MovementController : MonoBehaviour
         //Vector3 mouseInput = new Vector3(0, Input.GetAxis("Mouse X"), 0);
         //transform.eulerAngles += mouseInput * mouseSpeed;
 
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, groundLayer / 2 + 0.2f, groundLayer);
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight / 2 + 0.2f, groundLayer);
 
         if (isGrounded)
         {
@@ -88,6 +88,11 @@ public class MovementController : MonoBehaviour
         yield return new WaitForSeconds(dashDelay);
         rb.drag = 0;
         isDashing = false;
+    }
+
+    public void RestoreDash()
+    {
+        canDash = true;
     }
 
 }
