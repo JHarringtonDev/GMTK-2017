@@ -61,7 +61,7 @@ public class MovementController : MonoBehaviour
             moveSpeed = airSpeed;
         }
 
-        if(Input.GetMouseButtonDown(0) && canDash)
+        if(Input.GetMouseButtonDown(0) && canDash && !isDashing)
         {
             StartCoroutine(HandleDash());
         }
@@ -80,10 +80,10 @@ public class MovementController : MonoBehaviour
 
     IEnumerator HandleDash()
     {
+        rb.velocity = Vector3.zero;
+        rb.drag = groundDrag;
         isDashing = true;
         canDash = false;
-        rb.drag = groundDrag;
-        rb.velocity = Vector3.zero;
         rb.AddForce(cameraHold.transform.forward * dashSpeed, ForceMode.Impulse);
         yield return new WaitForSeconds(dashDelay);
         rb.drag = 0;
