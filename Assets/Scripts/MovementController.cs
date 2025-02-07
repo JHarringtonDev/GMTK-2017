@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build;
 using UnityEngine;
 
 public class MovementController : MonoBehaviour
@@ -13,13 +14,15 @@ public class MovementController : MonoBehaviour
     [SerializeField] float airSpeed;
     [SerializeField] float mouseSpeed;
     [SerializeField] float dashSpeed;
-    [SerializeField] float dragDelay;
+    [SerializeField] float dashDelay;
 
     [Header("Ground Check")]
     [SerializeField] float groundDrag;
     [SerializeField] float playerHeight;
     [SerializeField] LayerMask groundLayer;
     bool isGrounded;
+    bool canDash;
+    bool isDashing;
 
     Rigidbody rb;
 
@@ -48,13 +51,17 @@ public class MovementController : MonoBehaviour
         {
             rb.drag = groundDrag;
             moveSpeed = groundspeed;
+            if (!isDashing && !canDash)
+            {
+                canDash = true;
+            }
         }
         else
         {
             moveSpeed = airSpeed;
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && canDash)
         {
             StartCoroutine(HandleDash());
         }
@@ -73,11 +80,14 @@ public class MovementController : MonoBehaviour
 
     IEnumerator HandleDash()
     {
+        isDashing = true;
+        canDash = false;
         rb.drag = groundDrag;
         rb.velocity = Vector3.zero;
         rb.AddForce(cameraHold.transform.forward * dashSpeed, ForceMode.Impulse);
-        yield return new WaitForSeconds(dragDelay);
+        yield return new WaitForSeconds(dashDelay);
         rb.drag = 0;
-
+        isDashing = false;
     }
+
 }
