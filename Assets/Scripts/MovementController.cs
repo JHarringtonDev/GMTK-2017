@@ -25,6 +25,7 @@ public class MovementController : MonoBehaviour
     bool isDashing;
 
     Rigidbody rb;
+    CapsuleCollider capsuleCollider;
 
     CameraControl cameraHold;
 
@@ -33,6 +34,7 @@ public class MovementController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         cameraHold = FindObjectOfType<CameraControl>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -98,5 +100,11 @@ public class MovementController : MonoBehaviour
     public bool GetDashing()
     {
         return isDashing;
+    }
+
+    public void winningDash()
+    {
+        capsuleCollider.enabled = false;
+        rb.AddForce(cameraHold.transform.forward * dashSpeed, ForceMode.Impulse);
     }
 }

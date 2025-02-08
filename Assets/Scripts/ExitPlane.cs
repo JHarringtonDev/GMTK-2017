@@ -18,6 +18,7 @@ public class ExitPlane : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<MovementController>() != null)
         {
+            collision.gameObject.GetComponent<MovementController>().winningDash();
             StartCoroutine(BeginNextLevel());
         }
     }
