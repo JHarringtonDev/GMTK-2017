@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aa1f5db3e348ee743b2f10962dd855c3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -102,7 +102,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -119,7 +119,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 4
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -158,7 +158,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -178,6 +178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8816483449134798922}
+  - component: {fileID: 4602361608145364257}
   m_Layer: 0
   m_Name: Exit Door
   m_TagString: Untagged
@@ -206,6 +207,23 @@ Transform:
   - {fileID: 3309594815074763248}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4602361608145364257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7585188990465685122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616dabaa25240d34dabf730b497ba093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runesToActivate: 1
+  doorSpeed: 3
+  leftDoor: {fileID: 9043379647384332120}
+  rightDoor: {fileID: 8450572457077817388}
+  exitPlane: {fileID: 8092052527424639274}
 --- !u!1001 &1542350672088822306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -316,9 +334,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1149116072393867126, guid: 272d9d5cc3dd3fc40b6737243c21e683, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323697558495248732, guid: 272d9d5cc3dd3fc40b6737243c21e683, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5211001349979916402, guid: 272d9d5cc3dd3fc40b6737243c21e683, type: 3}
       propertyPath: m_Name
       value: Door Runes
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397181487050399250, guid: 272d9d5cc3dd3fc40b6737243c21e683, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217398102727884177, guid: 272d9d5cc3dd3fc40b6737243c21e683, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -469,6 +503,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 749ac805017ffb642834e61134421373, type: 3}
+--- !u!1 &8450572457077817388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 199708, guid: 749ac805017ffb642834e61134421373, type: 3}
+  m_PrefabInstance: {fileID: 8450572457077754928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8450572457078083972 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 466356, guid: 749ac805017ffb642834e61134421373, type: 3}
@@ -554,5 +593,10 @@ PrefabInstance:
 --- !u!4 &9043379647383973572 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 484164, guid: 7d4b7f62843a70e48ad6f3b8dd9edc48, type: 3}
+  m_PrefabInstance: {fileID: 9043379647384309120}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9043379647384332120 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 125656, guid: 7d4b7f62843a70e48ad6f3b8dd9edc48, type: 3}
   m_PrefabInstance: {fileID: 9043379647384309120}
   m_PrefabAsset: {fileID: 0}
