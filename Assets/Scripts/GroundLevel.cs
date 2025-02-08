@@ -15,8 +15,6 @@ public class GroundLevel : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("player Landed");
-
             foreach (var target in targets)
             {
                 target.reactivateTarget();
