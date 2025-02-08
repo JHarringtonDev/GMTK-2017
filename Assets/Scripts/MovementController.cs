@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Build;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovementController : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class MovementController : MonoBehaviour
     [SerializeField] float mouseSpeed;
     [SerializeField] float dashSpeed;
     [SerializeField] float dashDelay;
+    [SerializeField] Image dashDisplay;
 
     [Header("Ground Check")]
     [SerializeField] float groundDrag;
@@ -55,7 +57,7 @@ public class MovementController : MonoBehaviour
             moveSpeed = groundspeed;
             if (!isDashing && !canDash)
             {
-                canDash = true;
+                RestoreDash();
             }
         }
         else
@@ -86,6 +88,7 @@ public class MovementController : MonoBehaviour
         rb.drag = groundDrag;
         isDashing = true;
         canDash = false;
+        dashDisplay.color = Color.grey;
         rb.AddForce(cameraHold.transform.forward * dashSpeed, ForceMode.Impulse);
         yield return new WaitForSeconds(dashDelay);
         rb.drag = 0;
@@ -95,6 +98,7 @@ public class MovementController : MonoBehaviour
     public void RestoreDash()
     {
         canDash = true;
+        dashDisplay.color = Color.white;
     }
 
     public bool GetDashing()
