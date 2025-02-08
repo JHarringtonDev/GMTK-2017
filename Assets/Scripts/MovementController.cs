@@ -95,4 +95,8 @@ public class MovementController : MonoBehaviour
         canDash = true;
     }
 
+    public bool GetDashing()
+    {
+        return isDashing;
+    }
 }
