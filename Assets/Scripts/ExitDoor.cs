@@ -25,7 +25,6 @@ public class ExitDoor : MonoBehaviour
 
     void OpenDoor()
     {
-        Debug.Log("Open Door");
         opening = true;
         exitPlane.enabled = true;
     }
