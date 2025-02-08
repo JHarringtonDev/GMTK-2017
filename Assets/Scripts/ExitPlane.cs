@@ -6,11 +6,26 @@ using UnityEngine.SceneManagement;
 public class ExitPlane : MonoBehaviour
 {
     [SerializeField] string nextLevel;
+    [SerializeField] float nextLevelTime;
+    FadeScript fadeScript;
+
+    private void Start()
+    {
+        fadeScript = FindObjectOfType<FadeScript>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<MovementController>() != null)
         {
-            SceneManager.LoadScene(nextLevel);
+            StartCoroutine(BeginNextLevel());
         }
+    }
+
+    IEnumerator BeginNextLevel()
+    {
+        fadeScript.FadeOut();
+        yield return new WaitForSeconds(nextLevelTime);
+        SceneManager.LoadScene(nextLevel);
     }
 }
