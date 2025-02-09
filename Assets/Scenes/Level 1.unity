@@ -376,17 +376,10 @@ PrefabInstance:
       propertyPath: smallRune
       value: 
       objectReference: {fileID: 1443011050}
-    - target: {fileID: 1507974920689324383, guid: 54dabe5d3db0f8141bfc1e5a978ee094, type: 3}
-      propertyPath: activatedMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 0574116a7188c654ab34fcd54a2d0ecc, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 123956, guid: 54dabe5d3db0f8141bfc1e5a978ee094, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1274705460}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54dabe5d3db0f8141bfc1e5a978ee094, type: 3}
 --- !u!1001 &303739943
 PrefabInstance:
@@ -1324,73 +1317,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b5f2506ca8bb7b4ead9ab3c79c2d72b, type: 3}
---- !u!1 &1274705454 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 123956, guid: 54dabe5d3db0f8141bfc1e5a978ee094, type: 3}
-  m_PrefabInstance: {fileID: 244107987}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &1274705460
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1274705454}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 2
-  m_Shape: 0
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 1.63
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 2
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!4 &1280847229 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 428260, guid: dd5512a4d6221e44699f71f85ee2dee9, type: 3}
