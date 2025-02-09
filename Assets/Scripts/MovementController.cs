@@ -63,6 +63,10 @@ public class MovementController : MonoBehaviour
         else
         {
             moveSpeed = airSpeed;
+            if (!isDashing)
+            {
+                rb.drag = 0;
+            }
         }
 
         if(Input.GetMouseButtonDown(0) && canDash && !isDashing)
