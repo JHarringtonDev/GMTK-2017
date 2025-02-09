@@ -7,6 +7,7 @@ public class TargetScript : MonoBehaviour
     MovementController player;
     [SerializeField] bool isEnemy;
     [SerializeField] int maxHealth;
+    [SerializeField] float deathTime;
     int currentHealth;
 
     private void Start()
@@ -30,18 +31,29 @@ public class TargetScript : MonoBehaviour
 
     void deactivateTarget()
     {
-        AudioManager.PlaySound("gem");
-        GetComponent<SphereCollider>().enabled = false;
-        GetComponent<MeshRenderer>().enabled = false;
+        if (!isEnemy)
+        {
+            AudioManager.PlaySound("gem");
+            GetComponent<SphereCollider>().enabled = false;
+            GetComponent<MeshRenderer>().enabled = false;
+        }
+        else
+        {
+            StartCoroutine(DisableEnemy());
+        }
     }
 
     public void reactivateTarget()
     {
-        GetComponent<SphereCollider>().enabled = true;
-        GetComponent<MeshRenderer>().enabled = true;
-        if (isEnemy)
+        if (!isEnemy)
         {
-            currentHealth = maxHealth;
+            GetComponent<SphereCollider>().enabled = true;
+            GetComponent<MeshRenderer>().enabled = true;
         }
+    }
+
+    IEnumerator DisableEnemy()
+    {
+        yield return new WaitForSeconds(deathTime);
     }
 }
