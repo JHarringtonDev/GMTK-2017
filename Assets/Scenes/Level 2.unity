@@ -751,7 +751,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 872251340486978748, guid: 05a13ed8018448040a1edcd0335268a5, type: 3}
       propertyPath: nextLevel
-      value: Level 1
+      value: Level 3
       objectReference: {fileID: 0}
     - target: {fileID: 872251340486978748, guid: 05a13ed8018448040a1edcd0335268a5, type: 3}
       propertyPath: nextLevelTime
