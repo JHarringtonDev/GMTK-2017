@@ -29,6 +29,7 @@ public class FadeScript : MonoBehaviour
             else
             {
                 fadingIn = false;
+                fadeImage.gameObject.SetActive(false);
             }
         } 
         else if (fadingOut)
@@ -53,6 +54,7 @@ public class FadeScript : MonoBehaviour
 
     public void FadeOut()
     {
+        fadeImage.gameObject.SetActive(true);
         fadingOut = true;
     }
 }
