@@ -31,6 +31,7 @@ public class BigRune : MonoBehaviour
         {
             if (player.GetDashing() && !isActivated)
             {
+                player.StopVelocity();
                 bigRuneMesh.material = activatedMaterial;
                 smallRune.material = activatedMaterial;
                 exitDoor.ActivateRune();
