@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    MovementController player;
+
+    private void Start()
     {
-        
+        player = FindObjectOfType<MovementController>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        transform.LookAt(player.transform.position);
     }
 }
