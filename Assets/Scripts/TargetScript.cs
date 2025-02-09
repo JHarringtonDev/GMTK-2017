@@ -30,6 +30,7 @@ public class TargetScript : MonoBehaviour
 
     void deactivateTarget()
     {
+        AudioManager.PlaySound("gem");
         GetComponent<SphereCollider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
     }

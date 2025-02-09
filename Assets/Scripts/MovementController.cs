@@ -94,6 +94,7 @@ public class MovementController : MonoBehaviour
         isDashing = true;
         canDash = false;
         dashDisplay.color = Color.grey;
+        AudioManager.PlaySound("dash");
         rb.AddForce(cameraHold.transform.forward * dashSpeed, ForceMode.Impulse);
         yield return new WaitForSeconds(dashDelay);
         rb.drag = 0;

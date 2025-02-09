@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevel: 
+  nextLevelTime: 0
 --- !u!1 &7585188990465685122
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,7 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runesToActivate: 1
-  doorSpeed: 3
+  doorSpeed: 10
   leftDoor: {fileID: 9043379647384332120}
   rightDoor: {fileID: 8450572457077817388}
   exitPlane: {fileID: 8092052527424639274}

@@ -36,6 +36,8 @@ public class ExitDoor : MonoBehaviour
         if (runesToActivate == 0 ) 
         {
             OpenDoor();
+            AudioManager.PlaySound("unlock");
+            AudioManager.PlaySound("door");
         }
     }
 }

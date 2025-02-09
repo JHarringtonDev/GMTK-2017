@@ -31,6 +31,7 @@ public class BigRune : MonoBehaviour
         {
             if (player.GetDashing() && !isActivated)
             {
+                AudioManager.PlaySound("rune");
                 player.StopVelocity();
                 bigRuneMesh.material = activatedMaterial;
                 smallRune.material = activatedMaterial;
