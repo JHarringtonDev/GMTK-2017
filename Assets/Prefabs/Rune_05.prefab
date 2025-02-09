@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 956770dbb34e76444bd82bcd3bf6582e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activatedMaterial: {fileID: 0}
+  activatedMaterial: {fileID: 2100000, guid: 0574116a7188c654ab34fcd54a2d0ecc, type: 2}
   smallRune: {fileID: 0}
 --- !u!108 &2154052806643714826
 Light:

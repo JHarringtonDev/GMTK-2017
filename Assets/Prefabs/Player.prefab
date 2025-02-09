@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundspeed: 20
-  airSpeed: 2
+  airSpeed: 5
   mouseSpeed: 1
   dashSpeed: 100
   dashDelay: 1
